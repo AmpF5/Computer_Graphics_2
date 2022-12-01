@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Computer_Graphics_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280">
     <Grid>
-
+        <Button Width="80" Content="Load Image" Margin="310,0,410,0"  VerticalAlignment="Top" Click="Button_Click"/>
+        <Image x:Name="imagePicture" Margin="0,20,0,0" />
     </Grid>
 </Window>
