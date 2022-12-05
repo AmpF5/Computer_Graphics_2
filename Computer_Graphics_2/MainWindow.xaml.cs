@@ -26,7 +26,7 @@ namespace Computer_Graphics_2
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Load_Image(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new();
             openFile.Filter = "Image files| *.jpg; *.png";
@@ -34,6 +34,19 @@ namespace Computer_Graphics_2
             if (openFile.ShowDialog() == true)
             {
                 imagePicture.Source = new BitmapImage(new Uri(openFile.FileName));
+            }
+        }
+
+        private void Smoothing_Filter(object sender, RoutedEventArgs e)
+        {
+            if(imagePicture.Source != null)
+            {
+                SmoothingFilter img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.Test();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
             }
         }
     }

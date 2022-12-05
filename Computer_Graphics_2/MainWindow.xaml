@@ -7,7 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        <Button Width="80" Content="Load Image" Margin="310,0,410,0"  VerticalAlignment="Top" Click="Button_Click"/>
-        <Image x:Name="imagePicture" Margin="0,20,0,0" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Width="120" Height="24" Content="Load Image" Click="Load_Image"/>
+            <Button Grid.Column="2" Width="120" Height="24" Content="Smoothing Filter" Click="Smoothing_Filter" />
+            <Button Grid.Column="3" Width="120" Height="24" Content="Median Filter" />
+            <Button Grid.Column="4" Width="120" Height="24" Content="Edge Detection Filter"/>
+            <Button Grid.Column="5" Width="120" Height="24" Content="Dilation"/>
+            <Button Grid.Column="6" Width="120" Height="24" Content="Erosion"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Image x:Name="imagePicture" Margin="5,5,5,5" />
+        </Grid>
     </Grid>
 </Window>
