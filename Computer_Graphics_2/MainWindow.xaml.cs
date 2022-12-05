@@ -49,6 +49,20 @@ namespace Computer_Graphics_2
                 MessageBox.Show("Wrong format or you did not select any image");
             }
         }
+
+        private void Median_Filter(object sender, RoutedEventArgs e)
+        {
+            if(imagePicture.Source != null)
+            {
+                MedianFilter img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.Filtr();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+
+        }
     }
     
 }
