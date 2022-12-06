@@ -26,7 +26,7 @@
             <Button Grid.Column="1" Width="120" Height="24" Content="Load Image" Click="Load_Image"/>
             <Button Grid.Column="2" Width="120" Height="24" Content="Smoothing Filter" Click="Smoothing_Filter" />
             <Button Grid.Column="3" Width="120" Height="24" Content="Median Filter" Click="Median_Filter" />
-            <Button Grid.Column="4" Width="120" Height="24" Content="Edge Detection Filter"/>
+            <Button Grid.Column="4" Width="120" Height="24" Content="Edge Detection Filter" Click="Sobel_Click"/>
             <Button Grid.Column="5" Width="120" Height="24" Content="Dilation"/>
             <Button Grid.Column="6" Width="120" Height="24" Content="Erosion"/>
         </Grid>

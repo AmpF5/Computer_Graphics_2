@@ -63,6 +63,19 @@ namespace Computer_Graphics_2
             }
 
         }
+
+        private void Sobel_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                SobelFilter img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.convertbtn_Click();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
     }
     
 }
