@@ -76,6 +76,18 @@ namespace Computer_Graphics_2
                 MessageBox.Show("Wrong format or you did not select any image");
             }
         }
+        private void Dilatation_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                Dilatation img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.Dilation(3);
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
     }
     
 }
