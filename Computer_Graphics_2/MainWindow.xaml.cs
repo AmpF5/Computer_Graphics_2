@@ -81,7 +81,20 @@ namespace Computer_Graphics_2
             if (imagePicture.Source != null)
             {
                 Dilatation img = new(imagePicture.Source as BitmapImage);
-                imagePicture.Source = img.Dilation(3);
+                imagePicture.Source = img.Dilation(5);
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
+
+        private void Erosion_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                Erosion img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.ErodeImage();
             }
             else
             {
