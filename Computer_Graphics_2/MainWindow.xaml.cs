@@ -49,6 +49,58 @@ namespace Computer_Graphics_2
                 MessageBox.Show("Wrong format or you did not select any image");
             }
         }
+
+        private void Median_Filter(object sender, RoutedEventArgs e)
+        {
+            if(imagePicture.Source != null)
+            {
+                MedianFilter img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.Filtr();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+
+        }
+
+        private void Sobel_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                SobelFilter img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.convertbtn_Click();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
+        private void Dilatation_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                Dilatation img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.Dilation(5);
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
+
+        private void Erosion_Click(object sender, RoutedEventArgs e)
+        {
+            if (imagePicture.Source != null)
+            {
+                Erosion img = new(imagePicture.Source as BitmapImage);
+                imagePicture.Source = img.ErodeImage();
+            }
+            else
+            {
+                MessageBox.Show("Wrong format or you did not select any image");
+            }
+        }
     }
     
 }
