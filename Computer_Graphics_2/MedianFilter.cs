@@ -27,94 +27,6 @@ namespace Computer_Graphics_2
         }
         public ImageSource Filtr()
         {
-            //int w = _bitmap.Width;
-            //int h = _bitmap.Height;
-            //for (int x = 0; x < h; x++)
-            //{
-            //    for (int y = 0; y < w; y++)
-            //    {
-            //        int i = y;
-            //        int j = x;
-            //        byte[] medianArr = new byte[9];
-            //        Color[] colorsArr = new Color[9];
-            //        medianArr[0] = (byte)((_bitmap.GetPixel(i, j).R + _bitmap.GetPixel(i, j).G + _bitmap.GetPixel(i, j).B) / 3);
-            //        colorsArr[0] = _bitmap.GetPixel(i, j);
-
-
-            //        if (i - 1 < 0 || j - 1 < 0)
-            //            medianArr[1] = 0;
-            //        else
-            //        {
-            //            medianArr[1] = (byte)((_bitmap.GetPixel(i - 1, j - 1).R + _bitmap.GetPixel(i - 1, j - 1).G + _bitmap.GetPixel(i - 1, j - 1).B) / 3); colorsArr[1] = _bitmap.GetPixel(i - 1, j - 1);
-            //        }
-
-            //        if (i - 1 < 0)
-            //            medianArr[2] = 0;
-            //        else
-            //        {
-            //            medianArr[2] = (byte)((_bitmap.GetPixel(i - 1, j).R + _bitmap.GetPixel(i - 1, j).G + _bitmap.GetPixel(i - 1, j).B) / 3); colorsArr[2] = _bitmap.GetPixel(i - 1, j);
-            //        }
-
-            //        if (i - 1 < 0 || j + 1 > _bitmap.Width - 1)
-            //            medianArr[3] = 0;
-            //        else
-            //        {
-            //            medianArr[3] = (byte)((_bitmap.GetPixel(i - 1, j + 1).R + _bitmap.GetPixel(i - 1, j + 1).G + _bitmap.GetPixel(i - 1, j + 1).B) / 3); colorsArr[3] = _bitmap.GetPixel(i - 1, j + 1);
-            //        }
-
-            //        if (j - 1 < 0)
-            //            medianArr[4] = 0;
-            //        else
-            //        {
-            //            medianArr[4] = (byte)((_bitmap.GetPixel(i, j - 1).R + _bitmap.GetPixel(i, j - 1).G + _bitmap.GetPixel(i, j - 1).B) / 3); colorsArr[4] = _bitmap.GetPixel(i, j - 1);
-            //        }
-
-            //        if (j + 1 > _bitmap.Width - 1)
-            //            medianArr[5] = 0;
-            //        else
-            //        {
-            //            medianArr[5] = (byte)((_bitmap.GetPixel(i, j + 1).R + _bitmap.GetPixel(i, j + 1).G + _bitmap.GetPixel(i, j + 1).B) / 3); colorsArr[5] = _bitmap.GetPixel(i, j + 1);
-            //        }
-
-            //        if (i + 1 > _bitmap.Height - 1 || j - 1 < 0)
-            //            medianArr[6] = 0;
-            //        else
-            //        {
-            //            medianArr[6] = (byte)((_bitmap.GetPixel(i + 1, j - 1).R + _bitmap.GetPixel(i + 1, j - 1).G + _bitmap.GetPixel(i + 1, j - 1).B) / 3); colorsArr[6] = _bitmap.GetPixel(i + 1, j - 1);
-            //        }
-
-            //        if (i + 1 > _bitmap.Height - 1)
-            //            medianArr[7] = 0;
-            //        else
-            //        {
-            //            medianArr[7] = (byte)((_bitmap.GetPixel(i + 1, j).R + _bitmap.GetPixel(i + 1, j).G + _bitmap.GetPixel(i + 1, j).B) / 3); colorsArr[7] = _bitmap.GetPixel(i + 1, j);
-            //        }
-
-            //        if (i + 1 > _bitmap.Height - 1 || j + 1 > _bitmap.Width - 1)
-            //            medianArr[8] = 0;
-            //        else
-            //        {
-            //            medianArr[8] = (byte)((_bitmap.GetPixel(i + 1, j + 1).R + _bitmap.GetPixel(i + 1, j + 1).G + _bitmap.GetPixel(i + 1, j + 1).B) / 3); colorsArr[8] = _bitmap.GetPixel(i + 1, j + 1);
-            //        }
-
-            //        //medianArr.ToList().IndexOf(Median(medianArr));
-            //        var medianValue = Median(medianArr);
-            //        var colorIndex = medianArr.ToList().IndexOf(medianValue);
-            //        var newColor = colorsArr[colorIndex];
-            //        _bitmap.SetPixel(i, j ,newColor);
-            //        //_bitmap.SetPixel(i, j, colorsArr[medianArr.ToList().IndexOf(Median(medianArr))]);
-            //        //Bitmap res_img = new Bitmap(w, h);
-            //        //BitmapData res_data = res_img.LockBits(
-            //        //    new Rectangle(0, 0, w, h),
-            //        //    ImageLockMode.WriteOnly,
-            //        //    PixelFormat.Format24bppRgb);
-            //        //Marshal.Copy(_bitmap.Arr, 0, res_data.Scan0, h*w);
-            //        //Marshal.Copy()
-            //        //res_img.UnlockBits(res_data);
-
-            //    }
-            //}
-            //return BitmapToImageSource(_bitmap);
             var image = _bitmap;
             int w = image.Width;
             int h = image.Height;
@@ -165,7 +77,6 @@ namespace Computer_Graphics_2
 
                     for (int c = 0; c < 3; c++)
                     {
-                        //result[res_pixel_loc + c] = (byte)(neighborhood[c].median());
                         result[res_pixel_loc + c] = (byte)(Median(neighborhood[c]));
                     }
                 }
