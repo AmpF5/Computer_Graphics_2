@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace Computer_Graphics_2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
